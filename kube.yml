@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: extensions/v2beta1
 kind: Deployment
 metadata:
   name: howtodc
@@ -11,12 +11,12 @@ spec:
     spec:
       containers:
         - name: howtodc
-          image: gcr.io/howtodc/howtodc:v1
+          image: gcr.io/howtodc/howtodc:v2
           ports:
             - containerPort: 8080
 
 ---
-apiVersion: v1
+apiVersion: v2
 kind: Service
 metadata:
   name: howtodc-service
