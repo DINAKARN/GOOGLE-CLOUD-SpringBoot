@@ -16,6 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class HowtoGcController {
 @GetMapping("/test")
 public String testHowTo() {
-	return "How to Deploy in GC Working";
+	return "How to Deploy in GC Working with YML";
 }
 }
