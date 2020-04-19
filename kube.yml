@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: howtodc
-          image: gcr.io/howtodc/howtodc
+          image: gcr.io/howtodc/howtodc:v1
           ports:
             - containerPort: 8080
 
