@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: howtodc
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: howtodc
+    spec:
+      containers:
+        - name: howtodc
+          image: gcr.io/howtodc/howtodc
+          ports:
+            - containerPort: 8080
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: howtodc-service
+  labels:
+    name: howtodc-service
+spec:
+  ports:
+    - port: 80
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    app: howtodc
+  type: LoadBalancer
